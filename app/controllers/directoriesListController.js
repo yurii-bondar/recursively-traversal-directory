@@ -10,17 +10,16 @@ controller.tree = (req, res) => {
       (Promise.resolve(path).then(path =>
         parseDirectory(
            path[0].name 
-        )))
+        )))       
 
-       
+               
     })
   })
 };
 
 module.exports = controller;
-    
+   
 
-//const { foo, bar }  = await iAmAPromise.then(result => result.data);
 
 
 

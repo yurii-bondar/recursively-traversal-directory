@@ -6,7 +6,7 @@
       <div class="card-body">
         <form action="/add" method="POST">
           <div class="form-group">
-            <input style="width: 795px; margin-left: -15px;" type="text" name="name" placeholder="... path"
+            <input style="width: 95vw; margin-left: -15px;" type="text" name="name" placeholder="... path"
               class="form-control" autofocus>
           </div>
           <button style="margin-left: -18px; background: rgb(155, 202, 85); color:#000;" type="submit"
@@ -16,12 +16,12 @@
         </form>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <table style=" color: #000; font-size: 1.2rem; " class="table table-bordered table-hover">
-        <thead>
+        <thead class="row-md-12">
           <tr>
             <td>№</td>
-            <td>Path</td>
+            <td class="row-md-12">Path</td>
             <td>Action with path</td>
           </tr>
         </thead>
@@ -43,9 +43,6 @@
       </table>
     </div>
   </div>
-</div>
-<div style="height: 100vh; display: inline-flex; margin-left: -230px; width: 45vw;">
-  <% include partials/_tree_view %>
 </div>
 </div>
 
