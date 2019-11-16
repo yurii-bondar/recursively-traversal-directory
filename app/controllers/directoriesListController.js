@@ -10,9 +10,8 @@ controller.tree = (req, res) => {
       (Promise.resolve(path).then(path =>
         parseDirectory(
            path[0].name 
-        )))       
-
-               
+        )))
+                     
     })
   })
 };
