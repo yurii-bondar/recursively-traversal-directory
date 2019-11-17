@@ -1,4 +1,5 @@
 const controller = {};
+const isValid = require('is-valid-path');
 
 controller.list = (req, res) => {
   req.getConnection((err, conn) => {
@@ -15,14 +16,22 @@ controller.list = (req, res) => {
   });
 };
 
-controller.save = (req, res) => {
+controller.save = (req, res) => { 
+  
   const data = req.body;
-  req.getConnection((err, connection) => {
-    const query = connection.query('INSERT INTO path set ?', data, (err, path) => {
-      console.log(path)
-      res.redirect('/');
+ 
+  if((isValid(data.name)) == true){
+    req.getConnection((err, connection) => {
+      const query = connection.query('INSERT INTO path set ?', data, (err, path) => {
+        console.log(path)
+        res.redirect('/');
+      })
     })
-  })
+  }else{
+    res.redirect('/');
+    console.log("Incorrect path");
+  }
+ 
 };
 
 controller.edit = (req, res) => {
