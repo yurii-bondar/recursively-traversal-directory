@@ -1,7 +1,5 @@
 const express = require('express');
-const fs = require("fs");
 const path = require('path');
-const morgan = require('morgan');
 const pathRoutes = require('./routes/apiRoutes');
 const bodyParser = require('body-parser');
 const dbConnection = require('./model/dbConnection')
@@ -9,8 +7,7 @@ const dbConnection = require('./model/dbConnection')
 const app = express();
 
 app.use(dbConnection)
-   .use(bodyParser.urlencoded({extended: true}))  
-   .use(morgan('dev'))
+   .use(bodyParser.urlencoded({extended: true}))     
    .use('/', pathRoutes)
    .set('port', 3000 )
    .set('view engine', 'ejs')
