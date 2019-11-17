@@ -1,11 +1,7 @@
 <% include partials/_header %>
 
-<style>
 
-
-</style>
-
-<div style="float: left;" class="container mt-5">
+<div style="float: left;">
   <div>
    
       <div class="card-body">
@@ -22,12 +18,12 @@
       </div>
     
     <div class="table-container">
-      <table style=" color: #000; font-size: 1.2rem; " class="table table-bordered table-hover">
+      <table style=" color: #000; font-size: 1.2rem; " class="table table-bordered table-hover" cellpadding="10">
         <thead class="row-md-12">
           <tr>
-            <th>№</th>
-            <th class="table-path">Path</th>
-            <th class="table-button">Action with path</th>
+            <th width="2%">№ </th>
+            <th width="50% class="table-path">Path</th>
+            <th width="30% class="table-button">Action with path</th>
           </tr>
         </thead>
         <tbody>
@@ -37,8 +33,8 @@
             <td class="string"><%= (i + 1) %></td>
             <td class="string"><%= data[i].name %></td>
             <td class="table-button">
-              <a href="/dree/<%= data[i].id %>" class="btn btn-success">Get tree</a>
-              <a href="/tree/<%= data[i].id %>" class="btn btn-warning">Look in terminal</a>
+              <a href="/tree-view/<%= data[i].id %>" class="btn btn-success" target="tee_view">Get tree</a>
+              <a href="/terminal-view/<%= data[i].id %>" class="btn btn-warning">Look in terminal</a>
               <a href="/update/<%= data[i].id %>" class="btn btn-info">Edit</a>
               <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
             </td>

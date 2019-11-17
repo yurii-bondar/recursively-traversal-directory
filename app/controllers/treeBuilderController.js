@@ -1,7 +1,6 @@
 const controller = {};
 
 const builderTree = require("../../src/helpers/treeBuilderHelper");
-// const SOLUTION = require("../../src/helpers/treeBuilderHelper");
 
 controller.dree = (req, res) => { 
 
@@ -19,38 +18,10 @@ controller.dree = (req, res) => {
              });
       })
     })
-  };
-    
-   
+  };  
     
 
 
 
 module.exports = controller;
-
-
-
-
-
-
-// res.render('tree', {
-           
-// });
-
- 
-//   res.send(SOLUTION);
-
-
-
-
-
-
-// app.get("/", (_req, res) => { 
-//   const result = fs.readFileSync("web.html", "utf8");
-//   res.send(result);
-// });
-
-// app.get("/dree", (_req, res) => {
-//   res.send(SOLUTION);
-// });
 
