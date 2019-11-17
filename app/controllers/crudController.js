@@ -29,7 +29,7 @@ controller.save = (req, res) => {
     })
   }else{
     res.redirect('/');
-    console.log("Incorrect path");
+    console.log('\n' + '\n' + "<<<<< Incorrect path >>>>>");
   }
  
 };
