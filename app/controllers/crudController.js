@@ -16,23 +16,25 @@ controller.list = (req, res) => {
   });
 };
 
-controller.save = (req, res) => { 
-  
+controller.save = (req, res) => {
+
   const data = req.body;
- 
-  if((isValid(data.name)) == true){
+
+  if ((isValid(data.name)) == false || data.name == "") {
+    res.redirect('/');
+    console.clear()
+    console.log('\n' + '\n' + "<<<<< Incorrect path >>>>>");
+  } else {
+
     req.getConnection((err, connection) => {
       const query = connection.query('INSERT INTO path set ?', data, (err, path) => {
         console.log(path)
         res.redirect('/');
       })
     })
-  }else{
-    res.redirect('/');
-    console.log('\n' + '\n' + "<<<<< Incorrect path >>>>>");
   }
- 
 };
+
 
 controller.edit = (req, res) => {
   const { id } = req.params;
@@ -44,6 +46,7 @@ controller.edit = (req, res) => {
     });
   });
 };
+
 
 controller.update = (req, res) => {
   const { id } = req.params;
