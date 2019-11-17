@@ -13,7 +13,7 @@ app.use(dbConnection)
    .set('view engine', 'ejs')
    .set('views', path.join(__dirname, '..', 'src', 'views'))
    .listen(app.get('port'), () => {
-      console.log(`Server running localhost:${app.get('port')}`);
+      console.log(`http://localhost:${app.get('port')}`);
    });
 
 
