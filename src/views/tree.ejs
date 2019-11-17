@@ -1,0 +1,21 @@
+<html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<body>     
+  <div>       
+    <p>     
+      <pre id="text">                         
+              ... loading
+      </pre>
+    </p>
+  </div>
+  <script>
+    const textElement = document.getElementById("text");
+
+    axios.get('/dree/').then(({ data: { text } }) => {
+      textElement.innerHTML = text;        
+    });
+  </script>
+</body>
+
+</html>

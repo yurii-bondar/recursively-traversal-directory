@@ -1,8 +1,13 @@
 <% include partials/_header %>
 
+<style>
+
+
+</style>
+
 <div style="float: left;" class="container mt-5">
   <div>
-    <div class="col-md-7">
+   
       <div class="card-body">
         <form action="/add" method="POST">
           <div class="form-group">
@@ -15,24 +20,25 @@
           </button>
         </form>
       </div>
-    </div>
-    <div class="col-md-12">
+    
+    <div class="table-container">
       <table style=" color: #000; font-size: 1.2rem; " class="table table-bordered table-hover">
         <thead class="row-md-12">
           <tr>
-            <td>№</td>
-            <td class="row-md-12">Path</td>
-            <td>Action with path</td>
+            <th>№</th>
+            <th class="table-path">Path</th>
+            <th class="table-button">Action with path</th>
           </tr>
         </thead>
         <tbody>
           <% if (data) { %>
-          <% for(var i = 0; i < data.length; i++) { %>
+          <% for(let i = 0; i < data.length; i++) { %>
           <tr>
-            <td><%= (i + 1) %></td>
-            <td><%= data[i].name %></td>
-            <td>
-              <a href="/tree/<%= data[i].id %>" class="btn btn-success">Get tree</a>
+            <td class="string"><%= (i + 1) %></td>
+            <td class="string"><%= data[i].name %></td>
+            <td class="table-button">
+              <a href="/dree/<%= data[i].id %>" class="btn btn-success">Get tree</a>
+              <a href="/tree/<%= data[i].id %>" class="btn btn-warning">Look in terminal</a>
               <a href="/update/<%= data[i].id %>" class="btn btn-info">Edit</a>
               <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
             </td>

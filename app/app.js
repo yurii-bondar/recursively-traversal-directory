@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require("fs");
 const path = require('path');
 const morgan = require('morgan');
 const pathRoutes = require('./routes/apiRoutes');
@@ -16,3 +17,7 @@ app.use(dbConnection)
    .set('views', path.join(__dirname, '..', 'src', 'views'))
    .listen(app.get('port'), () => { console.log(`Server running localhost:${app.get('port')}`);
 });
+
+
+
+

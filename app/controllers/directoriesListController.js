@@ -1,5 +1,4 @@
 const controller = {};
-const path = require('path');
 const parseDirectory = require('../../src/helpers/directoriesListHelper')
 
 controller.tree = (req, res) => { 
@@ -10,11 +9,12 @@ controller.tree = (req, res) => {
       (Promise.resolve(path).then(path =>
         parseDirectory(
            path[0].name 
-        )))
-                     
+        )))       
     })
   })
 };
+
+
 
 module.exports = controller;
    
