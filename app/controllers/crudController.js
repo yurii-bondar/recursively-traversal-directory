@@ -3,20 +3,20 @@ const controller = {};
 controller.list = (req, res) => {
   req.getConnection((err, conn) => {
     conn.query('SELECT * FROM path', (err, path) => {
-     if (err) {
-      res.json(err);
-     }
-    
-     res.render('paths', {
-        data: path       
-     });
-    
+      if (err) {
+        res.json(err);
+      }
+
+      res.render('paths', {
+        data: path
+      });
+
     });
   });
 };
 
 controller.save = (req, res) => {
-  const data = req.body; 
+  const data = req.body;
   req.getConnection((err, connection) => {
     const query = connection.query('INSERT INTO path set ?', data, (err, path) => {
       console.log(path)
@@ -41,9 +41,9 @@ controller.update = (req, res) => {
   const newPath = req.body;
   req.getConnection((err, conn) => {
 
-  conn.query('UPDATE path set ? where id = ?', [newPath, id], (err, rows) => {
-    res.redirect('/');
-  });
+    conn.query('UPDATE path set ? where id = ?', [newPath, id], (err, rows) => {
+      res.redirect('/');
+    });
   });
 };
 

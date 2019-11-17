@@ -1,10 +1,10 @@
 <html>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<body>     
-  <div>       
-    <p>     
-      <pre id="text">                         
+<body>
+  <div>
+    <p>
+      <pre id="text">
               ... loading
       </pre>
     </p>
@@ -13,7 +13,7 @@
     const textElement = document.getElementById("text");
 
     axios.get('/tree-view/').then(({ data: { text } }) => {
-      textElement.innerHTML = text;        
+      textElement.innerHTML = text;
     });
   </script>
 </body>

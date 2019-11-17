@@ -7,13 +7,14 @@ const dbConnection = require('./model/dbConnection')
 const app = express();
 
 app.use(dbConnection)
-   .use(bodyParser.urlencoded({extended: true}))     
+   .use(bodyParser.urlencoded({ extended: true }))
    .use('/', pathRoutes)
-   .set('port', 3000 )
+   .set('port', 3000)
    .set('view engine', 'ejs')
    .set('views', path.join(__dirname, '..', 'src', 'views'))
-   .listen(app.get('port'), () => { console.log(`Server running localhost:${app.get('port')}`);
-});
+   .listen(app.get('port'), () => {
+      console.log(`Server running localhost:${app.get('port')}`);
+   });
 
 
 
